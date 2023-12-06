@@ -1,4 +1,3 @@
-
 import { Text, Select, SelectBackdrop, SelectContent, SelectDragIndicator, SelectDragIndicatorWrapper, SelectInput, SelectItem, SelectPortal, SelectTrigger, FormControlLabel } from "@gluestack-ui/themed";
 import React, { useState } from "react";
 
@@ -42,9 +41,9 @@ const Pilihan = ({ label, datas, width, height, fontSize, selectedValue, onValue
               <SelectDragIndicatorWrapper borderWidth={"$1"} borderRadius={"$sm"}>
                 <SelectDragIndicator />
               </SelectDragIndicatorWrapper>
-              <SelectItem label={"Dummy"} value={null} />
-              <SelectItem label={"Dummy"} value={null} />
-              <SelectItem label={"Dummy"} value={null} />
+              {datas.map((data, index) => (
+                <SelectItem key={index} label={data} value={data} />
+              ))}
             </SelectContent>
           </SelectPortal>
         </Select>
@@ -54,4 +53,3 @@ const Pilihan = ({ label, datas, width, height, fontSize, selectedValue, onValue
 };
 
 export default Pilihan;
-
